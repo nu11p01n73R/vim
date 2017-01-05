@@ -7,6 +7,21 @@ function createDirectory {
     fi
 }
 
+function installPathogen {
+    if [[ ! -f "$HOME/.vim/autoload/pathogen.vim" ]]
+    then
+        curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    fi
+}
+
+function createVimrc {
+    if [[ ! -f "$HOME/.vimrc" ]]
+    then
+        ln -s "$HOME/.vim/vimrc" "$HOME/.vimrc"
+    fi
+}
+
 createDirectory "autoload" \
     && createDirectory "bundle" \
-    && curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+    && installPathogen  \
+    && createVimrc
