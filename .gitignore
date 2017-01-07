@@ -1,1 +1,9 @@
+# Ignore pathogen autoload
+# Will always be installed using
+# setup.sh
 autoload
+
+# Ignore vim swap files
+*.sw*
+
+
