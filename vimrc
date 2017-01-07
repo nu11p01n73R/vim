@@ -24,7 +24,7 @@ let g:syntastic_check_on_wq = 0
 
 " NERD_tree
 autocmd VimEnter * NERDTree | wincmd p
-map nt :NERDTree<enter>
+map nt :NERDTreeToggle<enter>
 
 " CtrlP
 map cp :CtrlP<enter>
