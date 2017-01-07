@@ -1,3 +1,5 @@
+** Vim Configurations**
+
 This repo is used to track my vim configurations. 
 
 The different plugins that are used with the vim
