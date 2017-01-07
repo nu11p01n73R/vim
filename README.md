@@ -1,4 +1,4 @@
-** Vim Configurations**
+**Vim Configurations**
 
 This repo is used to track my vim configurations. 
 
