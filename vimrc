@@ -1,5 +1,8 @@
 execute pathogen#infect()
 filetype plugin indent on
+set tabstop=8
+set shiftwidth=8
+set expandtab
 
 " Add line numbers
 set number
