@@ -1,6 +1,12 @@
 execute pathogen#infect()
 filetype plugin indent on
 
+" Add line numbers
+set number
+
+" Removes | from split bar
+set fillchars=""
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
