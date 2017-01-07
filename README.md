@@ -34,6 +34,7 @@ to the one you need.
 
 - `nt` to toogle display of NERDTree
 - `cp` to display CtrlP
+- `gr` run the current Go file
 
 **Custom Commands**
 
