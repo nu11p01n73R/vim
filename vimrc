@@ -1,4 +1,5 @@
 execute pathogen#infect()
+syntax on
 filetype plugin indent on
 
 " set tab width to 8 by default
