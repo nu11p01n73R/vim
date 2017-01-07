@@ -25,6 +25,9 @@ let g:syntastic_check_on_wq = 0
 " NERD_tree
 autocmd VimEnter * NERDTree | wincmd p
 
+" CtrlP
+map cp :CtrlP<enter>
+
 
 " Change tab width dynamically
 function SetTab(spaces)
