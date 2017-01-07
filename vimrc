@@ -29,6 +29,9 @@ map nt :NERDTreeToggle<enter>
 " CtrlP
 map cp :CtrlP<enter>
 
+" Airline theme.
+let g:airline_theme='base16'
+
 
 " Change tab width dynamically
 function SetTab(spaces)
