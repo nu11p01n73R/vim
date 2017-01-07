@@ -1,6 +1,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+set encoding=utf-8
 
 " set tab width to 8 by default
 set tabstop=8
@@ -9,6 +10,7 @@ set expandtab
 
 " Add line numbers
 set number
+highlight LineNr ctermfg=blue ctermbg=black
 
 " Removes | from split bar
 set fillchars=""
@@ -44,3 +46,6 @@ endfunction
 " Calls SetTab to set tab width
 " Expects one argument
 command -nargs=1 Tab call SetTab(<f-args>)
+
+
+let g:airline_powerline_fonts=1
