@@ -62,3 +62,11 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 map gr :GoRun %<enter>
+
+
+" Autocommands
+augroup vimrc_autocmds
+          " Highlights after 75 characters
+          autocmd BufEnter * highlight OverLength ctermbg=darkgrey
+          autocmd BufEnter * match OverLength /\%75v.*/
+augroup END
