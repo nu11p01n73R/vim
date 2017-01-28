@@ -29,11 +29,12 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " NERD_tree
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 map nt :NERDTreeToggle<enter>
 
 " CtrlP
 map cp :CtrlP<enter>
+map cr :CtrlPBuffer<enter>
 
 " Airline theme.
 let g:airline_theme='base16'
@@ -52,6 +53,7 @@ command -nargs=1 Tab call SetTab(<f-args>)
 
 " Airline status bar
 let g:airline_powerline_fonts=1
+set laststatus=2
 
 " Vim-go
 let g:go_highlight_functions = 1
@@ -70,3 +72,6 @@ augroup vimrc_autocmds
           autocmd BufEnter * highlight OverLength ctermbg=darkgrey
           autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
+
+"let g:loaded_youcompleteme = 1
+set completeopt-=preview
