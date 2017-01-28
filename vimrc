@@ -12,8 +12,10 @@ set expandtab
 set number
 highlight LineNr ctermfg=blue ctermbg=black
 
-" Removes | from split bar
-set fillchars=""
+" Vertical split configuration 
+set fillchars+=vert:│
+highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
+
 
 " Syntastic
 set statusline+=%#warningmsg#
