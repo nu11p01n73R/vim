@@ -45,7 +45,7 @@ let g:airline_theme='base16'
 
 
 " Change tab width dynamically
-function SetTab(spaces)
+function! SetTab(spaces)
         let &l:tabstop=a:spaces
         let &l:shiftwidth=a:spaces
 endfunction
@@ -53,7 +53,7 @@ endfunction
 " Custom command Tab to set tab with
 " Calls SetTab to set tab width
 " Expects one argument
-command -nargs=1 Tab call SetTab(<f-args>)
+command! -nargs=1 Tab call SetTab(<f-args>)
 
 " Airline status bar
 let g:airline_powerline_fonts=1
@@ -79,3 +79,14 @@ augroup END
 
 "let g:loaded_youcompleteme = 1
 set completeopt-=preview
+
+" Trun on/off relative number 
+" command Tr
+function! ToggleRelativeNumber()
+        if (&relativenumber == 0) 
+                set relativenumber
+        else 
+                set norelativenumber
+        endif
+endfunction
+command! Tr call ToggleRelativeNumber()
