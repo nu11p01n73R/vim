@@ -10,7 +10,9 @@ set expandtab
 
 " Add line numbers
 set number
+set relativenumber
 highlight LineNr ctermfg=blue ctermbg=black
+highlight CursorLineNr cterm=bold  ctermfg=darkcyan  ctermbg=black
 
 " Vertical split configuration 
 set fillchars+=vert:│
