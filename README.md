@@ -41,6 +41,7 @@ to the one you need.
 - `Tr ` Toggle displaying relative number
 
 **Loading of plugins**
+
 The plugins that need to be availabe on vim startup are placed in 
 
 ```
