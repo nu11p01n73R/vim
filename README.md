@@ -34,12 +34,33 @@ to the one you need.
 
 - `nt` to toogle display of NERDTree
 - `cp` to display CtrlP
-- `gr` run the current Go file
 
 **Custom Commands**
 
 - `Tab n` Change tab to n spaces.
+- `Tr ` Toggle displaying relative number
 
-**Todo**
+**Loading of plugins**
+The plugins that need to be availabe on vim startup are placed in 
 
-- It would be nice if it has YouCompleteMe as well.
+```
+~/.vim/bundle/start
+```
+
+These plugins will be loaded on startup. Any other plugin that is 
+required in placed in 
+
+```
+~/.vim/bundle
+```
+
+These plugins are not loaded by default. There are functions which 
+load them up to runtime when required. Currently YCM and NERDTree are
+loaded only when required.
+
+The following commands are available, which call the functions to activate
+the required plugin
+```
+:Startnt load NERD tree
+:Startycm load You Complete Me
+```

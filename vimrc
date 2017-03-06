@@ -1,4 +1,6 @@
+" Load plugins in bundle/start
 execute pathogen#infect('bundle/start/{}')
+
 syntax on
 filetype plugin indent on
 set encoding=utf-8
