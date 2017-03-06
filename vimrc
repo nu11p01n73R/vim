@@ -1,4 +1,4 @@
-execute pathogen#infect()
+execute pathogen#infect('bundle/start/{}')
 syntax on
 filetype plugin indent on
 set encoding=utf-8
@@ -32,10 +32,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
-" NERD_tree
-" autocmd VimEnter * NERDTree | wincmd p
-map nt :NERDTreeToggle<enter>
-
 " CtrlP
 map cp :CtrlP<enter>
 map cr :CtrlPBuffer<enter>
@@ -66,20 +62,6 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-map gr :GoRun %<enter>
-
-
-" Autocommands
-augroup vimrc_autocmds
-          " Highlights after 75 characters
-          autocmd BufEnter * highlight OverLength ctermbg=darkgrey
-          autocmd BufEnter * match OverLength /\%75v.*/
-augroup END
-
-"let g:loaded_youcompleteme = 1
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
-set completeopt-=preview
-
 " Trun on/off relative number 
 " command Tr
 function! ToggleRelativeNumber()
@@ -90,3 +72,29 @@ function! ToggleRelativeNumber()
         endif
 endfunction
 command! Tr call ToggleRelativeNumber()
+
+" NERD_tree
+" Defer loading of nerdtree until required
+function! StartNERDTree()
+        set rtp+=~/.vim/bundle/nerdtree
+        runtime plugin/NERD_tree.vim
+endfunction
+command! Startnt call StartNERDTree()
+map nt :NERDTreeToggle<enter>
+
+" You Complete Me
+function! StartYouCompleteMe()
+        set rtp+=~/.vim/bundle/YouCompleteMe
+        runtime plugin/youcompleteme.vim
+endfunction
+command! Startycm call StartYouCompleteMe()
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
+set completeopt-=preview
+
+" Autocommands
+augroup vimrc_autocmds
+          " Highlights after 75 characters
+          autocmd BufEnter * highlight OverLength ctermbg=darkgrey
+          autocmd BufEnter * match OverLength /\%75v.*/
+augroup END
+
