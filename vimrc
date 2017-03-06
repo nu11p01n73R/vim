@@ -40,10 +40,6 @@ map nt :NERDTreeToggle<enter>
 map cp :CtrlP<enter>
 map cr :CtrlPBuffer<enter>
 
-" Airline theme.
-let g:airline_theme='base16'
-
-
 " Change tab width dynamically
 function! SetTab(spaces)
         let &l:tabstop=a:spaces
@@ -58,6 +54,9 @@ command! -nargs=1 Tab call SetTab(<f-args>)
 " Airline status bar
 let g:airline_powerline_fonts=1
 set laststatus=2
+
+" Airline theme.
+let g:airline_theme='luna'
 
 " Vim-go
 let g:go_highlight_functions = 1
@@ -78,6 +77,7 @@ augroup vimrc_autocmds
 augroup END
 
 "let g:loaded_youcompleteme = 1
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
 set completeopt-=preview
 
 " Trun on/off relative number 
