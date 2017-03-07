@@ -19,9 +19,17 @@ Clone the repo and run `setup.sh`.
 $ git clone https://github.com/nu11p01n73R/vim.git ~/.vim
 $ cd ~/.vim
 $ ./setup.sh
+$ git submodule update --init --recursive
 ```
 
 Everything is fine if it echoes nothing.
+
+To install You Complete Me,
+
+```
+$ cd bundle/YouCompleteMe
+$ python install.py
+```
 
 **Pre installation**
 
