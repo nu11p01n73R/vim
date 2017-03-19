@@ -5,10 +5,25 @@ syntax on
 filetype plugin indent on
 set encoding=utf-8
 
+" load colors if the file exists
+if filereadable(expand("~/.vim_background"))
+        let base16colorspace=256
+        source ~/.vim_background
+endif
+
+" show autocomplete options for :e etc
+set wildmenu
+
 " set tab width to 8 by default
 set tabstop=8
 set shiftwidth=8
 set expandtab
+
+" Highlight current line
+set cursorline
+
+" Reload vimrc
+map <leader>rl :source ~/.vimrc<enter>
 
 " Add line numbers
 set number
@@ -96,7 +111,7 @@ set completeopt-=preview
 " Autocommands
 augroup vimrc_autocmds
           " Highlights after 75 characters
-          autocmd BufEnter * highlight OverLength ctermbg=darkgrey
+          autocmd BufEnter * highlight OverLength ctermbg=darkgrey ctermfg=white
           autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
 
