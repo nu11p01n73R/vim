@@ -14,6 +14,12 @@ endif
 " show autocomplete options for :e etc
 set wildmenu
 
+" search as characters are entered.
+set incsearch
+
+" do not higlight the search once enter is pressed.
+set nohlsearch
+
 " set tab width to 8 by default
 set tabstop=8
 set shiftwidth=8
