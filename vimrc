@@ -52,8 +52,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Syntastic settings for golang
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+" Syntastic settings for js
+let g:syntastic_javascript_checkers = ['eslint']
 
 " CtrlP
 map cp :CtrlP<enter>
