@@ -57,11 +57,11 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " Syntastic settings for js
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 
 " CtrlP
-map cp :CtrlP<enter>
-map cr :CtrlPBuffer<enter>
+map <C-p> :CtrlP<enter>
+map <C-r> :CtrlPBuffer<enter>
 
 " Change tab width dynamically
 function! SetTab(spaces)
@@ -107,7 +107,7 @@ function! StartNERDTree()
         runtime plugin/NERD_tree.vim
 endfunction
 command! Startnt call StartNERDTree()
-map nt :NERDTreeToggle<enter>
+map <C-t> :NERDTreeToggle<enter>
 
 " You Complete Me
 function! StartYouCompleteMe()
@@ -125,3 +125,7 @@ augroup vimrc_autocmds
           autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
 
+
+map <C-j> :bnext<CR>
+map <C-k> :bprev<CR>
+map <C-l> :ls<CR>
