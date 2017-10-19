@@ -57,7 +57,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " Syntastic settings for js
-" let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " CtrlP
 map <C-p> :CtrlP<enter>
@@ -125,7 +125,7 @@ augroup vimrc_autocmds
           autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
 
-
+" Vim buffer key maps
 map <C-j> :bnext<CR>
 map <C-k> :bprev<CR>
 map <C-l> :ls<CR>
