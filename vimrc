@@ -61,7 +61,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " CtrlP
 map <C-p> :CtrlP<enter>
-map <C-r> :CtrlPBuffer<enter>
+map <C-b> :CtrlPBuffer<enter>
 
 " Change tab width dynamically
 function! SetTab(spaces)
