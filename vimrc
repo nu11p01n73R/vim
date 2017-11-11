@@ -61,7 +61,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " CtrlP
 map <C-p> :CtrlP<enter>
-map <C-b> :CtrlPBuffer<enter>
+"map <C-b> :CtrlPBuffer<enter>
 
 " Change tab width dynamically
 function! SetTab(spaces)
@@ -129,3 +129,6 @@ augroup END
 map <C-j> :bnext<CR>
 map <C-k> :bprev<CR>
 map <C-l> :ls<CR>
+
+" set backupcopy to yes for crontab file
+au FileType crontab setlocal backupcopy=yes
