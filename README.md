@@ -2,33 +2,17 @@
 
 This repo is used to track my vim configurations. 
 
-The different plugins that are used with the vim
-are added as git submodules.
-
 The repo also contains the working vimrc file, which
 can be moved to the home folder.
 
-This uses [pathogen](https://github.com/tpope/vim-pathogen)
-as the package manager.
+Plugins are managed using the native capablities in vim.
 
 **Installation**
 
-Clone the repo and run `setup.sh`.
-
 ```
 $ git clone https://github.com/nu11p01n73R/vim.git ~/.vim
-$ cd ~/.vim
-$ ./setup.sh
-$ git submodule update --init --recursive
-```
-
-Everything is fine if it echoes nothing.
-
-To install You Complete Me,
-
-```
-$ cd bundle/YouCompleteMe
-$ python install.py
+$ cd .vim
+$ make
 ```
 
 **Pre installation**
@@ -40,8 +24,10 @@ to the one you need.
 
 **Key Mappings**
 
-- `nt` to toogle display of NERDTree
-- `cp` to display CtrlP
+- `C-t` to toogle display of NERDTree
+- `C-j` next in buffer
+- `C-k` prev in buffer
+- `C-l` list buffers
 
 **Custom Commands**
 
@@ -50,26 +36,23 @@ to the one you need.
 
 **Loading of plugins**
 
-The plugins that need to be availabe on vim startup are placed in 
+
+All plugins in `pack/dist/start` are loaded on startup.
+
+The following packages are loaded only when required,
+- syntastic
+- YouCompleteMe
+- nerdtree
+
+To load the package, the `packadd` command can be used like,
 
 ```
-~/.vim/bundle/start
+:packadd syntastic
 ```
 
-These plugins will be loaded on startup. Any other plugin that is 
-required in placed in 
-
+The following command aliases are present in vimrc for easy loading,
 ```
-~/.vim/bundle
-```
-
-These plugins are not loaded by default. There are functions which 
-load them up to runtime when required. Currently YCM and NERDTree are
-loaded only when required.
-
-The following commands are available, which call the functions to activate
-the required plugin
-```
-:Startnt load NERD tree
-:Startycm load You Complete Me
+Pn      nerdetree
+Py      YouCompeteMe
+Ps      Syntastic
 ```
