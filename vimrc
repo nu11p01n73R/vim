@@ -1,5 +1,5 @@
 " Load plugins in bundle/start
-execute pathogen#infect('bundle/start/{}')
+"execute pathogen#infect('bundle/start/{}')
 
 syntax on
 filetype plugin indent on
@@ -42,7 +42,14 @@ set fillchars+=vert:│
 highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
 
 
+" Load package when required
+command! Pn packadd nerdtree
+command! Py packadd YouCompleteMe
+command! Ps packadd syntastic
+
+
 " Syntastic
+" Load when required
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -53,11 +60,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Syntastic settings for golang
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
-" Syntastic settings for js
+" Syntastic checkers
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['flake8']
 
 " CtrlP
 map <C-p> :CtrlP<enter>
@@ -79,7 +87,7 @@ let g:airline_powerline_fonts=1
 set laststatus=2
 
 " Airline theme.
-let g:airline_theme='luna'
+let g:airline_theme='base16'
 
 " Vim-go
 let g:go_highlight_functions = 1
@@ -101,27 +109,16 @@ endfunction
 command! Tr call ToggleRelativeNumber()
 
 " NERD_tree
-" Defer loading of nerdtree until required
-function! StartNERDTree()
-        set rtp+=~/.vim/bundle/nerdtree
-        runtime plugin/NERD_tree.vim
-endfunction
-command! Startnt call StartNERDTree()
 map <C-t> :NERDTreeToggle<enter>
 
 " You Complete Me
-function! StartYouCompleteMe()
-        set rtp+=~/.vim/bundle/YouCompleteMe
-        runtime plugin/youcompleteme.vim
-endfunction
-command! Startycm call StartYouCompleteMe()
 let g:ycm_python_binary_path = '/usr/local/bin/python3'
 set completeopt-=preview
 
 " Autocommands
 augroup vimrc_autocmds
           " Highlights after 75 characters
-          autocmd BufEnter * highlight OverLength ctermbg=darkgrey ctermfg=white
+          autocmd BufEnter * highlight OverLength ctermbg=Red ctermfg=black
           autocmd BufEnter * match OverLength /\%75v.*/
 augroup END
 
