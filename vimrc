@@ -46,6 +46,7 @@ highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
 command! Pn packadd nerdtree
 command! Py packadd YouCompleteMe
 command! Ps packadd syntastic
+command! Pg packadd vim-go
 
 
 " Syntastic

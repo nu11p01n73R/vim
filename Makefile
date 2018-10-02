@@ -8,7 +8,7 @@ OPT_DIR = pack/dist/opt
 install: $(START_DIR)/vim-airline $(START_DIR)/vim-airline-themes \
 	$(START_DIR)/base16-vim $(START_DIR)/vim-fugitive \
 	$(OPT_DIR)/syntastic $(OPT_DIR)/YouCompleteMe \
-	$(OPT_DIR)/nerdtree $(HOME)/.vimrc
+	$(OPT_DIR)/nerdtree $(OPT_DIR)/vim-go $(HOME)/.vimrc
 
 
 $(START_DIR)/vim-airline:
@@ -42,10 +42,14 @@ $(OPT_DIR)/nerdtree:
 	git clone https://github.com/scrooloose/nerdtree.git $(OPT_DIR)/nerdtree
 
 
+$(OPT_DIR)/vim-go:
+	git clone https://github.com/fatih/vim-go.git $(OPT_DIR)/vim-go
+
+
 $(HOME)/.vimrc: 
 	ln -s $(CURDIR)/vimrc $(HOME)/.vimrc
 
 
 clean:
-	rm -rf pack
-	# rm $(HOME)/.vimrc	
+	rm -rf pack 
+	rm $(HOME)/.vimrc
